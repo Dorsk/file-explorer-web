@@ -1,0 +1,23 @@
+/* src/TreeView.css */
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+li {
+  margin: 5px 0;
+}
+
+span {
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+  color: blue; /* Optional: Add color to indicate clickable */
+}
+
+.non-clickable {
+  cursor: default;
+  color: black;
+}
