@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import XMLViewer from "react-xml-viewer";
 import "./../App.css";
 import TreeViewer from "./treeviewer/Treeviewer";
 import FileInput from "./inputfile/FileInput";
@@ -18,8 +19,9 @@ class HomeComponent extends Component {
     this.setState({ fileStructure, fileReferences });
   };
 
-  handleFileClick = (fileContent) => {
-    this.setState({ fileContent });
+  handleFileClick = (fileContent, filetitle) => {
+    filetitle = "File : " + filetitle;
+    this.setState({ fileContent, filetitle });
   };
 
   render() {
@@ -36,11 +38,17 @@ class HomeComponent extends Component {
         <div className="fileinput">
           <div class="mb-1 row">
             <label for="contentFile" class="col-sm-12 col-form-label">
-              {this.state.filetitle}
+              <b>{this.state.filetitle}</b>
             </label>
             <div class="col-sm-12">
               <div>
-                <pre>{this.state.fileContent}</pre>
+                {this.state.fileContent && (
+                  <XMLViewer
+                    xml={this.state.fileContent}
+                    collapsible="true"
+                    collapsed="true"
+                  />
+                )}
               </div>
             </div>
             <pre lang="xml" id="cellContent" className="cellContent">

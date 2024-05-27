@@ -23,7 +23,7 @@ class TreeView extends Component {
   handleFileClick = (file) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-      this.props.onFileClick(e.target.result);
+      this.props.onFileClick(e.target.result, file.name);
     };
     reader.readAsText(file);
   };
