@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  max-height: 100vh;
 }
 
 .App-logo {
@@ -48,22 +49,47 @@
   }
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 5px;
+  border: 3px outset #ffffff;
+}
+
 .contain {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-height: 97vh;
+  max-width: 99%;
 }
 
 .treeview {
   width: 25%;
   text-align: left;
-  background-color: #f6f7f7;
 }
 
 .fileinput {
   width: 74%;
+  max-height: 90vh; /* Maximum height of the viewport */
   text-align: left;
-  background-color: #f6f7f7;
 }
 
 h1 {

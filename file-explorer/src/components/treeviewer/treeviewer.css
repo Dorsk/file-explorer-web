@@ -21,3 +21,11 @@ span {
   cursor: default;
   color: black;
 }
+
+.treeview {
+  width: 25%;
+  text-align: left;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 90vh; /* Maximum height of the viewport */
+  border-right: 1px solid #ccc; /* Optional: Add a border for separation */
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import "./../index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -19,12 +20,15 @@ class HeaderComponent extends Component {
             </a>
             <Navbar.Brand href="/">DAC 2.0</Navbar.Brand>
             <Nav className="me-auto"></Nav>
+            <Nav.Link href="/">DAC Editor</Nav.Link>
+            <Nav className="me-auto"></Nav>
+            <Nav.Link href="/tracerun">Trace Viewer</Nav.Link>
             <Nav className="me-auto"></Nav>
             <Nav className="me-auto"></Nav>
             <Nav className="me-auto"></Nav>
           </Container>
         </Navbar>
-        <div className="geofood-line"></div>
+        <div className="header-line"></div>
       </div>
     );
   }

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import XMLViewer from "react-xml-viewer";
-import "./../App.css";
-import TreeViewer from "./treeviewer/Treeviewer";
-import FileInput from "./inputfile/FileInput";
+import TraceViewerComponent from "./trace";
+import "./../../App.css";
+import TreeViewer from "./../treeviewer/Treeviewer";
+import FileInput from "./../inputfile/FileInput";
 
-class HomeComponent extends Component {
+class HomeTraceComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,6 @@ class HomeComponent extends Component {
       fileReferences: {},
       fileContent: "",
       filetitle: "",
-      file: null,
     };
   }
 
@@ -38,23 +37,15 @@ class HomeComponent extends Component {
         </div>
         <div className="fileinput">
           <div className="mb-1 row">
-            <label for="contentFile" className="col-sm-12 col-form-label">
-              <h2>
-                <b>{this.state.file.name === undefined} </b>
-              </h2>
-            </label>
             <div class="col-sm-12">
-              {this.state.fileContent && (
-                <XMLViewer
+              <div style={{ "margin-left": 40, "margin-right": 40 }}>
+                <h1>Trace Run Viewer</h1>
+                <TraceViewerComponent
                   xml={this.state.fileContent}
-                  collapsible="true"
-                  initalCollapsedDepth="2"
+                  file={this.state.file}
                 />
-              )}
+              </div>
             </div>
-            <pre lang="xml" id="cellContent" className="cellContent">
-              {" "}
-            </pre>
           </div>
         </div>
       </div>
@@ -62,4 +53,4 @@ class HomeComponent extends Component {
   }
 }
 
-export default HomeComponent;
+export default HomeTraceComponent;
