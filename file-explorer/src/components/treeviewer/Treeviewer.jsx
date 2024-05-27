@@ -20,21 +20,12 @@ class TreeView extends Component {
   };
 
   // Affichage du contenu du fichier
-  handleFile = (path, fileName) => {
-    //var file = new File(
-    //  "[" + this.props.data[1] + "/../" + path.replace(fileName, "") + "]",
-    //  fileName
-    // );
-    // document.getElementById("cellContent").replaceChildren("");
-    //const url =
-    //   "file:///" + this.props.data[1] + "/../" + path.replace(fileName, "") + fileName;
-    //fetch(url)
-    //  .then((r) => r.text())
-    //  .then((t) =>
-    //    document
-    //     .getElementById("cellContent")
-    //      .appendChild(document.createTextNode(" Yeah  " + t))
-    //  );
+  handleFileClick = (file) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      this.props.onFileClick(e.target.result);
+    };
+    reader.readAsText(file);
   };
 
   getFileIcon = (fileName) => {
@@ -70,7 +61,10 @@ class TreeView extends Component {
                 onClick={
                   isDirectory
                     ? () => this.handleToggle(currentPath)
-                    : () => this.handleFile(currentPath, key)
+                    : () =>
+                        this.handleFileClick(
+                          this.props.fileReferences[currentPath]
+                        )
                 }
                 className="clickable"
               >

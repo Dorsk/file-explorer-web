@@ -4,10 +4,13 @@ class FileInput extends Component {
   handleFileChange = (event) => {
     const files = event.target.files;
     const fileTree = {};
+    const fileReferences = {};
 
     const addToTree = (pathArray, tree, file) => {
       if (pathArray.length === 0) return;
+
       const [head, ...tail] = pathArray;
+
       if (!tree[head]) {
         tree[head] = tail.length === 0 ? null : {};
       }
@@ -18,6 +21,7 @@ class FileInput extends Component {
       ) {
         tail.map((path) => {
           if (!path.includes(".svn") && !path.includes(".project")) {
+            fileReferences[file.webkitRelativePath] = file;
             addToTree(tail, tree[head], file);
           }
         });
@@ -28,12 +32,13 @@ class FileInput extends Component {
       const pathArray = file.webkitRelativePath.split("/");
       pathArray.map((path) => {
         if (!path.includes(".svn") && !path.includes(".project")) {
+          fileReferences[file.webkitRelativePath] = file;
           addToTree(pathArray, fileTree, file);
         }
       });
     }
 
-    this.props.onChange(fileTree);
+    this.props.onChange(fileTree, fileReferences);
   };
 
   render() {

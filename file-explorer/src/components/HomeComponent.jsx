@@ -8,40 +8,45 @@ class HomeComponent extends Component {
     super(props);
     this.state = {
       fileStructure: {},
-      workspace: "",
+      fileReferences: {},
+      fileContent: "",
+      filetitle: "",
     };
   }
 
-  onChangeText = (workspace) => {
-    this.setState({ workspace });
+  handleFileChange = (fileStructure, fileReferences) => {
+    this.setState({ fileStructure, fileReferences });
   };
 
-  handleFileChange = (fileStructure) => {
-    this.setState({ fileStructure });
-    this.onChangeText(
-      document.getElementById("workspacedirectory").value.replace(/\\/g, "/")
-    );
+  handleFileClick = (fileContent) => {
+    this.setState({ fileContent });
   };
 
   render() {
     return (
       <div className="contain">
         <div className="treeview">
-          <TreeViewer data={[this.state.fileStructure, this.state.workspace]} />
+          <FileInput onChange={this.handleFileChange} />
+          <TreeViewer
+            data={[this.state.fileStructure]}
+            fileReferences={this.state.fileReferences}
+            onFileClick={this.handleFileClick}
+          />
         </div>
         <div className="fileinput">
-          <FileInput onChange={this.handleFileChange} />
           <div class="mb-1 row">
-            <label for="workspacedirectory" class="col-sm-2 col-form-label">
-              Préférence Workspace
+            <label for="contentFile" class="col-sm-12 col-form-label">
+              {this.state.filetitle}
             </label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="workspacedirectory" />
+            <div class="col-sm-12">
+              <div>
+                <pre>{this.state.fileContent}</pre>
+              </div>
             </div>
+            <pre lang="xml" id="cellContent" className="cellContent">
+              {" "}
+            </pre>
           </div>
-          <pre lang="xml" id="cellContent" className="cellContent">
-            {" "}
-          </pre>
         </div>
       </div>
     );
