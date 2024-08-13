@@ -40,7 +40,10 @@ class HomeComponent extends Component {
           <div className="mb-1 row">
             <label for="contentFile" className="col-sm-12 col-form-label">
               <h2>
-                <b>{this.state.file.name === undefined} </b>
+                <b>
+                  {this.state.file === undefined &&
+                    this.state.file.name === undefined}{" "}
+                </b>
               </h2>
             </label>
             <div class="col-sm-12">

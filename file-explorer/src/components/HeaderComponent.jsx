@@ -20,11 +20,17 @@ class HeaderComponent extends Component {
             </a>
             <Navbar.Brand href="/">DAC 2.0</Navbar.Brand>
             <Nav className="me-auto"></Nav>
-            <Nav.Link href="/">DAC Editor</Nav.Link>
+            <Nav.Link href="/">Vehicle Editor</Nav.Link>
+            <Nav className="me-auto"></Nav>
+            <Nav.Link href="/flowchart">Flowchart Editor</Nav.Link>
             <Nav className="me-auto"></Nav>
             <Nav.Link href="/tracerun">Trace Viewer</Nav.Link>
             <Nav className="me-auto"></Nav>
+            <Nav.Link href="/xmlcomparator">ODX Viewer</Nav.Link>
             <Nav className="me-auto"></Nav>
+            <Nav.Link href="/elkviewer">ELK Viewer</Nav.Link>
+            <Nav className="me-auto"></Nav>
+            <Nav.Link href="/admin">Administrator</Nav.Link>
             <Nav className="me-auto"></Nav>
           </Container>
         </Navbar>

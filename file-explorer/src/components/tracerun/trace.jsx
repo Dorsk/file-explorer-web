@@ -487,7 +487,7 @@ class TraceViewerComponent extends React.Component {
         </div>
 
         <div className="row">
-          <div className="input-group mb-1">
+          <div className="input-group col-sm">
             <label for="contentFile" className="col-sm-12 col-form-label">
               <h2>
                 <b>

@@ -1,0 +1,43 @@
+input {
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+.comparison {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.column {
+  width: 45%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.xml-content {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.difference {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid red;
+  background-color: #ffe6e6;
+  text-align: left;
+}
+
+.line {
+  margin: 2px 0;
+}
