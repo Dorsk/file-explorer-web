@@ -20,7 +20,7 @@ class HeaderComponent extends Component {
             </a>
             <Navbar.Brand href="/">DAC 2.0</Navbar.Brand>
             <Nav className="me-auto"></Nav>
-            <Nav.Link href="/">Vehicle Editor</Nav.Link>
+            <Nav.Link href="/vehicleeditor">Vehicle Editor</Nav.Link>
             <Nav className="me-auto"></Nav>
             <Nav.Link href="/flowchart">Flowchart Editor</Nav.Link>
             <Nav className="me-auto"></Nav>

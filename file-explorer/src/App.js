@@ -9,6 +9,7 @@ import XMLComparator from "./components/comparefiles/XMLComparator";
 import ELKViewer from "./components/elkviewer/HomeELKViewerComponent";
 import HomeAdminComponent from "./components/Admin/HomeAdminComponent";
 import OverviewFlowComponent from "./components/flowchart/OverviewFlow";
+import HomeVehicleEditorComponent from "./components/vehicleeditor/HomeVehicleEditorComponent";
 
 class App extends Component {
   render() {
@@ -19,6 +20,11 @@ class App extends Component {
           <div>
             <Routes>
               <Route path="/" exact element={<HomeComponent />}></Route>
+              <Route
+                path="/vehicleeditor"
+                exact
+                element={<HomeVehicleEditorComponent />}
+              ></Route>
               <Route
                 path="/tracerun"
                 exact

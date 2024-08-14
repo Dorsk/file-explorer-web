@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import XMLViewer from "react-xml-viewer";
+import { Link } from "react-router-dom";
 import "./../App.css";
-import TreeViewer from "./treeviewer/Treeviewer";
-import FileInput from "./inputfile/FileInput";
+import carouselImage1 from "./../img/caroucel/release-note.jfif";
+import carouselImage2 from "./../img/caroucel/roadmap-2025.jpeg";
+import carouselImage3 from "./../img/caroucel/release-note.jfif";
+import logo1 from "./../img/admin-page.jpg";
+import logo4 from "./../img/flowchart-ia.jfif";
+import logo3 from "./../img/tracerun.png";
+import logo2 from "./../img/car-editor.jfif";
 
 class HomeComponent extends Component {
   constructor(props) {
@@ -11,54 +16,111 @@ class HomeComponent extends Component {
       fileStructure: {},
       fileReferences: {},
       fileContent: "",
-      filetitle: "",
-      file: null,
+      pages: [
+        {
+          name: "Vehicle editor",
+          description: "Description for page 4.",
+          logo: logo4,
+          link: "/vehicleeditor",
+        },
+        {
+          name: "Flowchart Editor",
+          description: "Description for page 2.",
+          logo: logo2,
+          link: "/flowchart",
+        },
+        {
+          name: "Trace Viewer",
+          description: "Description for page 3.",
+          logo: logo3,
+          link: "/tracerun",
+        },
+
+        {
+          name: "Administration",
+          description: "Description for page 1.",
+          logo: logo1,
+          link: "/admin",
+        },
+      ],
     };
   }
 
-  handleFileChange = (fileStructure, fileReferences) => {
-    this.setState({ fileStructure, fileReferences });
-  };
-
-  handleFileClick = (fileContent, filetitle, file) => {
-    filetitle = "File : " + filetitle;
-    this.setState({ fileContent, filetitle, file });
-  };
-
   render() {
     return (
-      <div className="contain">
-        <div className="treeview">
-          <FileInput onChange={this.handleFileChange} />
-          <TreeViewer
-            data={[this.state.fileStructure]}
-            fileReferences={this.state.fileReferences}
-            onFileClick={this.handleFileClick}
-          />
-        </div>
-        <div className="fileinput">
-          <div className="mb-1 row">
-            <label for="contentFile" className="col-sm-12 col-form-label">
-              <h2>
-                <b>
-                  {this.state.file === undefined &&
-                    this.state.file.name === undefined}{" "}
-                </b>
-              </h2>
-            </label>
-            <div class="col-sm-12">
-              {this.state.fileContent && (
-                <XMLViewer
-                  xml={this.state.fileContent}
-                  collapsible="true"
-                  initalCollapsedDepth="2"
-                />
-              )}
+      <div className="container mt-5">
+        <div
+          id="homePageCarousel"
+          className="carousel slide mb-5"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src={carouselImage1}
+                className="d-block w-100 carousel-image"
+                alt="First slide"
+              />
             </div>
-            <pre lang="xml" id="cellContent" className="cellContent">
-              {" "}
-            </pre>
+            <div className="carousel-item">
+              <img
+                src={carouselImage2}
+                className="d-block w-100 carousel-image"
+                alt="Second slide"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={carouselImage3}
+                className="d-block w-100 carousel-image"
+                alt="Third slide"
+              />
+            </div>
           </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#homePageCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#homePageCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div className="row">
+          {this.state.pages.map((page, index) => (
+            <div className="col-lg-3 col-md-5 mb-3" key={index}>
+              <div className="card h-100">
+                <Link to={page.link} className="text-decoration-none text-dark">
+                  <img
+                    src={page.logo}
+                    className="card-img-top p-3"
+                    alt={page.name}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">{page.name}</h5>
+                    <p className="card-text">{page.description}</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );

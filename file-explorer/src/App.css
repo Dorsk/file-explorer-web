@@ -88,10 +88,16 @@
 
 .fileinput {
   width: 74%;
-  max-height: 90vh; /* Maximum height of the viewport */
+  max-height: 90vh;
   text-align: left;
 }
 
 h1 {
   margin-bottom: 20px;
+}
+
+.carousel-image {
+  height: 30vh; /* 30% of the viewport height */
+  object-fit: cover; /* Crop the image to fit the container */
+  object-position: center; /* Center the image within the container */
 }
