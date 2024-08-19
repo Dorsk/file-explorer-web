@@ -30,7 +30,7 @@ const SideBar = () => {
         ></div>
         <div
           className="dndnode "
-          onDragStart={(event) => onDragStart(event, "cylinder")}
+          onDragStart={(event) => onDragStart(event, "databaseCylinder")}
           draggable
         >
           <img

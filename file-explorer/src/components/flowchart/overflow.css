@@ -232,6 +232,24 @@
   background: #104f96;
 }
 
+.diamond {
+  width: 80px;
+  height: 80px;
+  background: rgb(255, 174, 0);
+  margin: 3px 0 0 30px;
+  /* Rotate */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* Rotate Origin */
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
 .actionNode {
   width: 60px;
   height: 60px;
@@ -252,12 +270,19 @@
   border-left: 50px solid green;
 }
 
-.cylinder {
-  /* whatever values/units you want */
+/*.cylinder {
+  whatever values/units you want
   width: 250px;
   height: 400px;
   border-radius: 100% / 80px;
   background: radial-gradient(50% 40px at 50% 40px, #0003 99.99%, #0000 0),
     radial-gradient(50% 40px at 50% calc(100% - 40px), #fff3 99.99%, #0000 0),
     red;
+} */
+
+.databaseCylinder {
+  width: 60px;
+  height: 60px;
+  background-image: url(./nodes/img/database-32.png);
+  background-repeat: no-repeat;
 }

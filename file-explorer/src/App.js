@@ -10,6 +10,7 @@ import ELKViewer from "./components/elkviewer/HomeELKViewerComponent";
 import HomeAdminComponent from "./components/Admin/HomeAdminComponent";
 import OverviewFlowComponent from "./components/flowchart/OverviewFlow";
 import HomeVehicleEditorComponent from "./components/vehicleeditor/HomeVehicleEditorComponent";
+import ShoppingPage from "./components/shopping/ShoppingComponent";
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
                 element={<XMLComparator />}
               ></Route>
               <Route path="/elkviewer" exact element={<ELKViewer />}></Route>
+              <Route path="/shopping" exact element={<ShoppingPage />}></Route>
               <Route
                 path="/admin"
                 exact
@@ -46,7 +48,6 @@ class App extends Component {
                 exact
                 element={<OverviewFlowComponent />}
               ></Route>
-
               <Route element={<NotFound />}></Route>
             </Routes>
           </div>

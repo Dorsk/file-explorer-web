@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./../App.css";
 import carouselImage1 from "./../img/caroucel/release-note.jfif";
 import carouselImage2 from "./../img/caroucel/roadmap-2025.jpeg";
-import carouselImage3 from "./../img/caroucel/release-note.jfif";
+import carouselImage3 from "./../img/caroucel/canvas-actia.jpg";
 import logo1 from "./../img/admin-page.jpg";
 import logo4 from "./../img/flowchart-ia.jfif";
 import logo3 from "./../img/tracerun.png";
