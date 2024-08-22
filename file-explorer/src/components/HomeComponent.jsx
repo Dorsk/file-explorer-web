@@ -19,26 +19,26 @@ class HomeComponent extends Component {
       pages: [
         {
           name: "Vehicle editor",
-          description: "Description for page 4.",
+          description: "Editeur DSD, GPC, Portal et Véhicule",
           logo: logo4,
           link: "/vehicleeditor",
         },
         {
           name: "Flowchart Editor",
-          description: "Description for page 2.",
+          description: "Crées ton propre flowchart",
           logo: logo2,
           link: "/flowchart",
         },
         {
           name: "Trace Viewer",
-          description: "Description for page 3.",
+          description: "Visualises les logs dans le temps",
           logo: logo3,
           link: "/tracerun",
         },
 
         {
           name: "Administration",
-          description: "Description for page 1.",
+          description: "Gestion des users et des services",
           logo: logo1,
           link: "/admin",
         },
@@ -55,13 +55,14 @@ class HomeComponent extends Component {
           data-bs-ride="carousel"
         >
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src={carouselImage1}
-                className="d-block w-100 carousel-image"
-                alt="First slide"
-              />
-            </div>
+            <a href="/releasenote">
+              <div className="carousel-item active">
+                <img
+                  src={carouselImage1}
+                  className="d-block w-100 carousel-image"
+                />
+              </div>
+            </a>
             <div className="carousel-item">
               <img
                 src={carouselImage2}

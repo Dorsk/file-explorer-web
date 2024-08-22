@@ -10,7 +10,9 @@ import ELKViewer from "./components/elkviewer/HomeELKViewerComponent";
 import HomeAdminComponent from "./components/Admin/HomeAdminComponent";
 import OverviewFlowComponent from "./components/flowchart/OverviewFlow";
 import HomeVehicleEditorComponent from "./components/vehicleeditor/HomeVehicleEditorComponent";
+import HomeVehicleEditorXMLComponent from "./components/vehicleeditorxml/HomeVehicleEditorXMLComponent";
 import ShoppingPage from "./components/shopping/ShoppingComponent";
+import ReleasenoteView from "./releasenotes/ReleasenoteView";
 
 class App extends Component {
   render() {
@@ -25,6 +27,11 @@ class App extends Component {
                 path="/vehicleeditor"
                 exact
                 element={<HomeVehicleEditorComponent />}
+              ></Route>
+              <Route
+                path="/xmlvehicleeditor"
+                exact
+                element={<HomeVehicleEditorXMLComponent />}
               ></Route>
               <Route
                 path="/tracerun"
@@ -47,6 +54,11 @@ class App extends Component {
                 path="/flowchart"
                 exact
                 element={<OverviewFlowComponent />}
+              ></Route>
+              <Route
+                path="/releasenote"
+                exact
+                element={<ReleasenoteView />}
               ></Route>
               <Route element={<NotFound />}></Route>
             </Routes>

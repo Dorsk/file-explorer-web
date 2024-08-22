@@ -12,17 +12,20 @@ class HeaderComponent extends Component {
           <Container>
             <a href="/">
               <img
-                src={require("./../icons/home.png")}
+                src={require("./../img/logo-actia.png")}
                 alt=""
-                width="50"
-                height="40"
+                width="170"
+                height="35"
               ></img>
             </a>
-            <Navbar.Brand href="/">DAC 2.0</Navbar.Brand>
+
+            <Navbar.Brand href="/">DAC As Services</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto"></Nav>
               <NavDropdown title="Services" id="nav-dropdown">
+                <Nav.Link href="/xmlvehicleeditor">XML Vehicle Editor</Nav.Link>
+                <Nav className="me-auto"></Nav>
                 <Nav.Link href="/vehicleeditor"> Vehicle Editor</Nav.Link>
                 <Nav className="me-auto"></Nav>
                 <Nav.Link href="/flowchart"> Flowchart Editor</Nav.Link>
